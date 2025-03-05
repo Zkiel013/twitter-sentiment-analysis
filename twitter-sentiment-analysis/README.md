@@ -3,9 +3,8 @@
 WEBPAGES:
 -Dashboard-ez
 
-  -Election prediction-ez
-  
-    -Election Alalytics-kh
+  1. Election prediction-ez
+  1.1. Election Alalytics-kh
     
-  -Influential leader rankings-de
+  2. Influential leader rankings-de
 
