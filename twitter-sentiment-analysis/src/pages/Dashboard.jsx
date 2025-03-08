@@ -4,6 +4,8 @@ import './TwitterSentimentDashboard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVoteYea, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
+import ElectionPrediction from './election-sentiment/election-prediction';
+import WorldLeader from './world-leader-sentiment/world-leader-sentiment';
 
 const FeatureCard = ({ title, icon, onClick }) => (
   <div className="feature-card" onClick={onClick}>
@@ -59,12 +61,12 @@ const Dashboard = () => {
           <FeatureCard
             title="Election Sentiments"
             icon={<FontAwesomeIcon icon={faVoteYea} size="4x" />}
-            onClick={() => navigateTo('/election-sentiment')}
+            onClick={() => navigateTo('./election-prediction')}
           />
           <FeatureCard
             title="World Leader Sentiments"
             icon={<FontAwesomeIcon icon={faGlobe} size="4x" />}
-            onClick={() => navigateTo('/world-leader-sentiment')}
+            onClick={() => navigateTo('./world-leader-sentiment')}
           />
         </div>
         <div className="divider">
@@ -86,15 +88,12 @@ const Dashboard = () => {
   );
 };
 
-const ElectionSentiment = () => <div><h2>Election Sentiment Page</h2></div>;
-const WorldLeaderSentiment = () => <div><h2>World Leader Sentiment Page</h2></div>;
-
 const App = () => (
   <Router>
     <Routes>
       <Route path="/" element={<Dashboard />} />
-      <Route path="/election-sentiment" element={<ElectionSentiment />} />
-      <Route path="/world-leader-sentiment" element={<WorldLeaderSentiment />} />
+      <Route path="/election-prediction" element={<ElectionPrediction />} />
+      <Route path="/world-leader-sentiment" element={<WorldLeader />} />
     </Routes>
   </Router>
 );
